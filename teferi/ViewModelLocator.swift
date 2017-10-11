@@ -27,6 +27,8 @@ protocol ViewModelLocator
     func getSummaryPageViewModel(forDate date: Date) -> SummaryPageViewModel
     
     func getRatingViewModel(start startDate: Date, end endDate: Date) -> RatingViewModel
+    
+    func getEditTimeslotViewModel(for timelineItem: TimelineItem) -> EditTimeslotViewModel
 }
 
 class DefaultViewModelLocator : ViewModelLocator
@@ -215,5 +217,11 @@ class DefaultViewModelLocator : ViewModelLocator
                                metricsService: metricsService,
                                settingsService: settingsService,
                                timeService: timeService)
+    }
+    
+    func getEditTimeslotViewModel(for timelineItem: TimelineItem) -> EditTimeslotViewModel
+    {
+        return EditTimeslotViewModel(timelineItem: timelineItem,
+                                     timeSlotService: timeSlotService)
     }
 }

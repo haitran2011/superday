@@ -35,6 +35,24 @@ extension TimelineItem
         }
     }
     
+    var slotStartAndStopTimeText: String
+    {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        
+        let startString = formatter.string(from: startTime)
+        
+        if let endTime = endTime
+        {
+            let endString = formatter.string(from: endTime)
+            return startString + " - " + endString
+        }
+        else
+        {
+            return startString
+        }
+    }
+    
     var elapsedTimeText: String
     {
         let hourMask = "%02d h %02d min"

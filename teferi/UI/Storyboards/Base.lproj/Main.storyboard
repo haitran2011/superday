@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -100,6 +101,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Quv-N5-Xzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1108" y="269"/>
+        </scene>
+        <!--Edit Timeslot View Controller-->
+        <scene sceneID="NnK-yv-5I5">
+            <objects>
+                <viewController storyboardIdentifier="EditTimeslot" id="GeG-os-2Ae" customClass="EditTimeslotViewController" customModule="teferi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4PE-bo-qNf"/>
+                        <viewControllerLayoutGuide type="bottom" id="t6p-P3-OiP"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Jpu-7P-ywT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5a-8d-b7J" customClass="ShadowView" customModule="teferi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="60" width="375" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="yMi-Ge-cNh"/>
+                                </constraints>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItQ-NB-6Ao">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="m5Q-Cw-rI2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FUo-Sx-CXU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="GeG-os-2Ae" id="NTN-UY-v5f"/>
+                                                <outlet property="delegate" destination="GeG-os-2Ae" id="TQq-Lc-jhk"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FUo-Sx-CXU" firstAttribute="top" secondItem="m5Q-Cw-rI2" secondAttribute="top" id="0hy-I4-pxi"/>
+                                        <constraint firstItem="FUo-Sx-CXU" firstAttribute="leading" secondItem="m5Q-Cw-rI2" secondAttribute="leading" id="n5y-xa-i5u"/>
+                                        <constraint firstAttribute="bottom" secondItem="FUo-Sx-CXU" secondAttribute="bottom" id="rDM-hG-Q2z"/>
+                                        <constraint firstAttribute="trailing" secondItem="FUo-Sx-CXU" secondAttribute="trailing" id="uLj-l0-3E9"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxZ-Xa-CYJ">
+                                <rect key="frame" x="335" y="70" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wxZ-Xa-CYJ" secondAttribute="height" multiplier="1:1" id="Fpg-FG-9vI"/>
+                                    <constraint firstAttribute="width" constant="40" id="VVU-Cc-dcf"/>
+                                </constraints>
+                                <state key="normal" image="icClose"/>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="GeG-os-2Ae" eventType="touchUpInside" id="j4J-5A-SwU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ItQ-NB-6Ao" firstAttribute="top" secondItem="4PE-bo-qNf" secondAttribute="bottom" constant="50" id="5hR-U1-Qf1"/>
+                            <constraint firstItem="wxZ-Xa-CYJ" firstAttribute="trailing" secondItem="Jpu-7P-ywT" secondAttribute="trailing" id="8PB-BP-r4G"/>
+                            <constraint firstAttribute="trailing" secondItem="f5a-8d-b7J" secondAttribute="trailing" id="EfR-t1-8JF"/>
+                            <constraint firstAttribute="trailing" secondItem="ItQ-NB-6Ao" secondAttribute="trailing" id="Mz7-mm-4Vl"/>
+                            <constraint firstItem="ItQ-NB-6Ao" firstAttribute="leading" secondItem="Jpu-7P-ywT" secondAttribute="leading" id="U54-bW-P4W"/>
+                            <constraint firstAttribute="bottom" secondItem="ItQ-NB-6Ao" secondAttribute="bottom" id="eZe-Ki-wJG"/>
+                            <constraint firstItem="f5a-8d-b7J" firstAttribute="leading" secondItem="Jpu-7P-ywT" secondAttribute="leading" id="f0b-xJ-RL1"/>
+                            <constraint firstItem="f5a-8d-b7J" firstAttribute="top" secondItem="4PE-bo-qNf" secondAttribute="bottom" constant="40" id="gyz-4H-Fid"/>
+                            <constraint firstItem="wxZ-Xa-CYJ" firstAttribute="top" secondItem="Jpu-7P-ywT" secondAttribute="topMargin" constant="50" id="uox-0e-o88"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="blurView" destination="ItQ-NB-6Ao" id="992-AH-2bn"/>
+                        <outlet property="shadowView" destination="f5a-8d-b7J" id="oGl-9Q-X1F"/>
+                        <outlet property="tableView" destination="FUo-Sx-CXU" id="lSK-Ca-y0c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXn-Dh-BcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MLj-kf-Srr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MLj-kf-Srr" id="E8K-Pg-erl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableViewCellContentView>
+                </tableViewCell>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vpt-cj-a0Q">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vpt-cj-a0Q" id="pGI-Ri-y86">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableViewCellContentView>
+                </tableViewCell>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FNt-dI-A0o">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FNt-dI-A0o" id="aha-mU-Ezq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableViewCellContentView>
+                </tableViewCell>
+            </objects>
+            <point key="canvasLocation" x="1910" y="243"/>
         </scene>
         <!--Access For Existing Users View Controller-->
         <scene sceneID="ouz-aJ-rbM">
@@ -419,5 +523,6 @@ To help us make Superday even better, please allow it to access your Motion Data
     <resources>
         <image name="icArrowLeft" width="6" height="10"/>
         <image name="icArrowRight" width="6" height="10"/>
+        <image name="icClose" width="40" height="40"/>
     </resources>
 </document>

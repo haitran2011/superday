@@ -199,6 +199,10 @@
 		8CF8C0951EDED72000EA2C77 /* WeeklySummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8C0941EDED72000EA2C77 /* WeeklySummaryViewController.swift */; };
 		8CF8C0991EDED99300EA2C77 /* WeeklySummary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF8C0981EDED99300EA2C77 /* WeeklySummary.storyboard */; };
 		8CF8C09D1EDEFEE900EA2C77 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8C09C1EDEFEE900EA2C77 /* ChartView.swift */; };
+		AC086A041F8B99750003AAB4 /* EditTimeslotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC086A031F8B99750003AAB4 /* EditTimeslotViewController.swift */; };
+		AC086A061F8B99920003AAB4 /* EditTimeslotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC086A051F8B99920003AAB4 /* EditTimeslotViewModel.swift */; };
+		AC086A081F8B99A90003AAB4 /* EditTimeslotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC086A071F8B99A90003AAB4 /* EditTimeslotPresenter.swift */; };
+		AC086A0B1F8CDA8E0003AAB4 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC086A0A1F8CDA8E0003AAB4 /* ShadowView.swift */; };
 		AC0A632A1E548F0800D56433 /* TrigonometryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0A63291E548F0800D56433 /* TrigonometryHelper.swift */; };
 		AC0CA4BD1F3DB76300EAEB44 /* TimelineVoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0CA4BC1F3DB76300EAEB44 /* TimelineVoteView.swift */; };
 		AC0CA4BF1F3DB78400EAEB44 /* TimelineVoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0CA4BE1F3DB78400EAEB44 /* TimelineVoteView.xib */; };
@@ -488,6 +492,10 @@
 		8CF8C0981EDED99300EA2C77 /* WeeklySummary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeeklySummary.storyboard; sourceTree = "<group>"; };
 		8CF8C09C1EDEFEE900EA2C77 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartView.swift; path = "teferi/UI/Modules/Weekly Summary/Views/ChartView.swift"; sourceTree = SOURCE_ROOT; };
 		924EEB50371CD17ACC6BCFF9 /* Pods-teferiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teferiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-teferiTests/Pods-teferiTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC086A031F8B99750003AAB4 /* EditTimeslotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeslotViewController.swift; sourceTree = "<group>"; };
+		AC086A051F8B99920003AAB4 /* EditTimeslotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeslotViewModel.swift; sourceTree = "<group>"; };
+		AC086A071F8B99A90003AAB4 /* EditTimeslotPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeslotPresenter.swift; sourceTree = "<group>"; };
+		AC086A0A1F8CDA8E0003AAB4 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		AC0A63291E548F0800D56433 /* TrigonometryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrigonometryHelper.swift; sourceTree = "<group>"; };
 		AC0A632B1E548FE800D56433 /* CategoryWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryWheel.swift; sourceTree = "<group>"; };
 		AC0CA4BC1F3DB76300EAEB44 /* TimelineVoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineVoteView.swift; sourceTree = "<group>"; };
@@ -1146,6 +1154,7 @@
 		8CA4613C1EC9A31B00587399 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				AC086A021F8B94D70003AAB4 /* Edit */,
 				8CEEF5AA1F175DB4007C36DA /* Datasource */,
 				8CA461411EC9A3CE00587399 /* Views */,
 				24564F711D832A4F00D9A8AE /* PagerViewController.swift */,
@@ -1278,6 +1287,25 @@
 				AC1085381EEE9FDD00E5F03B /* WeeklySummaryEmptyEtateView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		AC086A021F8B94D70003AAB4 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				AC086A091F8CDA6D0003AAB4 /* Views */,
+				AC086A031F8B99750003AAB4 /* EditTimeslotViewController.swift */,
+				AC086A051F8B99920003AAB4 /* EditTimeslotViewModel.swift */,
+				AC086A071F8B99A90003AAB4 /* EditTimeslotPresenter.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		AC086A091F8CDA6D0003AAB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC086A0A1F8CDA8E0003AAB4 /* ShadowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AC1E70EF1E3F4C120090D474 /* Algorithm */ = {
@@ -1659,6 +1687,7 @@
 				24564F561D83254E00D9A8AE /* TimelineCell.swift in Sources */,
 				AC6C129A1F4E01DE0045B341 /* StarsView.swift in Sources */,
 				24564F721D832A4F00D9A8AE /* PagerViewController.swift in Sources */,
+				AC086A061F8B99920003AAB4 /* EditTimeslotViewModel.swift in Sources */,
 				24C72AA61D906BDA00DABAC3 /* LogLevel.swift in Sources */,
 				BE7FAFCA1E7319AD00A62AC9 /* LocationModelAdapter.swift in Sources */,
 				8C5B88751EBCCDA00096AE5B /* CategoryExtensions.swift in Sources */,
@@ -1707,6 +1736,7 @@
 				BE24B8821E76C9D8005DF5B3 /* TrackEventPersistencyService.swift in Sources */,
 				AC69F0A81F4C407100EF2CC9 /* RatingViewModel.swift in Sources */,
 				8C460E8B1EE718F40002D70B /* CenterAlignedCollectionViewFlowLayout.swift in Sources */,
+				AC086A0B1F8CDA8E0003AAB4 /* ShadowView.swift in Sources */,
 				BEA783611E6DB4A400D44603 /* CategoryProvider.swift in Sources */,
 				8CF8C09D1EDEFEE900EA2C77 /* ChartView.swift in Sources */,
 				24DE24011E1BB3A40089B49E /* DefaultSelectedDateService.swift in Sources */,
@@ -1731,6 +1761,7 @@
 				8C1728FD1EF02D9A002ABDDA /* DailySummaryViewModel.swift in Sources */,
 				BE7FAFC61E72F96F00A62AC9 /* TrackEvent.swift in Sources */,
 				24DE23EE1E1BB3180089B49E /* CalendarDailyActivityView.swift in Sources */,
+				AC086A041F8B99750003AAB4 /* EditTimeslotViewController.swift in Sources */,
 				8C1728FF1EF02D9A002ABDDA /* SummaryPageViewController.swift in Sources */,
 				8C38A8791F711623001883F7 /* LoadingView.swift in Sources */,
 				24526A7D1D92D9BB00DA3FA0 /* Location.swift in Sources */,
@@ -1809,6 +1840,7 @@
 				BE55CED11E7AC994006B851E /* TemporaryTimeSlot.swift in Sources */,
 				BEA024341E41137D0061FE53 /* Category.swift in Sources */,
 				7E3C06991E30B7CA00859747 /* Strings.swift in Sources */,
+				AC086A081F8B99A90003AAB4 /* EditTimeslotPresenter.swift in Sources */,
 				8C6417071EAF415200B893D7 /* CategoryButton.swift in Sources */,
 				BE0A5B751EE0297600200939 /* TimeSlotServiceExtensions.swift in Sources */,
 				24EB96851DE709830040C211 /* PredicateExtensions.swift in Sources */,

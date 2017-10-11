@@ -102,14 +102,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2A-yK-iZw" customClass="ActivityTagView" customModule="teferi" customModuleProvider="target">
-                                <rect key="frame" x="148" y="7" width="44" height="18"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.5568627451" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="M9L-A7-WrK"/>
-                                    <constraint firstAttribute="width" constant="44" placeholder="YES" id="SNu-6g-q1a"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -121,11 +113,17 @@
                             <constraint firstItem="irT-bk-Y4K" firstAttribute="top" secondItem="2Oj-R3-3Vm" secondAttribute="bottom" constant="2" id="RK7-NU-0bt"/>
                             <constraint firstItem="2dA-qd-byA" firstAttribute="top" secondItem="MQM-XP-kp0" secondAttribute="top" constant="8" id="aUk-K9-h8x"/>
                             <constraint firstItem="2Oj-R3-3Vm" firstAttribute="leading" secondItem="MQM-XP-kp0" secondAttribute="leading" constant="10" id="iIj-gb-Eoh"/>
-                            <constraint firstItem="d2A-yK-iZw" firstAttribute="centerY" secondItem="I6B-z7-bFn" secondAttribute="centerY" id="iiv-Cz-dQN"/>
                             <constraint firstItem="irT-bk-Y4K" firstAttribute="centerX" secondItem="2Oj-R3-3Vm" secondAttribute="centerX" id="pi5-JJ-MF8"/>
                             <constraint firstItem="I6B-z7-bFn" firstAttribute="top" secondItem="MQM-XP-kp0" secondAttribute="top" constant="8" id="xFK-XS-JgU"/>
                             <constraint firstItem="lWX-Wq-cy4" firstAttribute="centerY" secondItem="2Oj-R3-3Vm" secondAttribute="centerY" id="xRK-9Z-Xjh"/>
-                            <constraint firstItem="d2A-yK-iZw" firstAttribute="leading" secondItem="I6B-z7-bFn" secondAttribute="trailing" constant="6" id="xqm-zR-Eii"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2A-yK-iZw" customClass="ActivityTagView" customModule="teferi" customModuleProvider="target">
+                        <rect key="frame" x="202" y="15.5" width="44" height="18"/>
+                        <color key="backgroundColor" red="0.21176470589999999" green="0.5568627451" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="M9L-A7-WrK"/>
+                            <constraint firstAttribute="width" constant="44" placeholder="YES" id="SNu-6g-q1a"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -133,10 +131,14 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="MQM-XP-kp0" secondAttribute="bottom" priority="750" id="300-X0-xqj"/>
                     <constraint firstItem="MQM-XP-kp0" firstAttribute="top" secondItem="dDI-IU-1Pi" secondAttribute="top" constant="8" id="5Ni-jN-hHj"/>
+                    <constraint firstItem="d2A-yK-iZw" firstAttribute="centerY" secondItem="I6B-z7-bFn" secondAttribute="centerY" id="8eL-k7-B1l"/>
+                    <constraint firstItem="d2A-yK-iZw" firstAttribute="top" secondItem="lWX-Wq-cy4" secondAttribute="bottom" priority="250" constant="3" id="EcF-eH-pei"/>
                     <constraint firstItem="3XR-CB-WIl" firstAttribute="centerX" secondItem="LmH-eW-Lnz" secondAttribute="centerX" id="N9P-IK-U8r"/>
+                    <constraint firstItem="d2A-yK-iZw" firstAttribute="leading" secondItem="I6B-z7-bFn" secondAttribute="trailing" constant="6" id="Tgm-bL-Bry"/>
                     <constraint firstItem="MQM-XP-kp0" firstAttribute="leading" secondItem="LmH-eW-Lnz" secondAttribute="trailing" constant="8" id="XUt-6K-9eL"/>
                     <constraint firstItem="LmH-eW-Lnz" firstAttribute="leading" secondItem="dDI-IU-1Pi" secondAttribute="leading" constant="16" id="chr-jJ-LLJ"/>
                     <constraint firstItem="3XR-CB-WIl" firstAttribute="centerY" secondItem="LmH-eW-Lnz" secondAttribute="centerY" id="fLJ-zu-HSs"/>
+                    <constraint firstItem="d2A-yK-iZw" firstAttribute="leading" secondItem="lWX-Wq-cy4" secondAttribute="leading" priority="250" id="gKh-yC-Yji"/>
                     <constraint firstAttribute="trailing" secondItem="MQM-XP-kp0" secondAttribute="trailing" priority="750" id="ste-ph-APx"/>
                     <constraint firstItem="LmH-eW-Lnz" firstAttribute="top" secondItem="MQM-XP-kp0" secondAttribute="top" id="vB5-UD-Syx"/>
                 </constraints>
@@ -155,9 +157,11 @@
                 <outlet property="lineView" destination="2Oj-R3-3Vm" id="iph-AN-HC0"/>
                 <outlet property="slotDescription" destination="2dA-qd-byA" id="lRi-xX-8UG"/>
                 <outlet property="slotTime" destination="I6B-z7-bFn" id="GWp-PU-SZL"/>
+                <outlet property="tagLeadingSpaceConstraint" destination="Tgm-bL-Bry" id="P0Q-XI-y8M"/>
+                <outlet property="tagYAlignConstraint" destination="8eL-k7-B1l" id="qSX-4p-7bL"/>
                 <outlet property="timeSlotDistanceConstraint" destination="GNx-pl-Arl" id="mf8-ey-B02"/>
             </connections>
-            <point key="canvasLocation" x="170.5" y="-239.5"/>
+            <point key="canvasLocation" x="107" y="-252"/>
         </tableViewCell>
     </objects>
     <resources>

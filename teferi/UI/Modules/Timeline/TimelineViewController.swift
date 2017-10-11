@@ -16,8 +16,8 @@ class TimelineViewController : UIViewController
 
     // MARK: Private Properties
     private let disposeBag = DisposeBag()
-    private let viewModel : TimelineViewModel
-    private let presenter : TimelinePresenter
+    fileprivate let viewModel : TimelineViewModel
+    fileprivate let presenter : TimelinePresenter
     
     private var tableView : UITableView!
     
@@ -73,7 +73,7 @@ class TimelineViewController : UIViewController
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
-        tableView.allowsSelection = false
+        tableView.allowsSelection = true
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
         tableView.register(UINib.init(nibName: "TimelineCell", bundle: Bundle.main), forCellReuseIdentifier: TimelineCell.cellIdentifier)
@@ -117,6 +117,11 @@ class TimelineViewController : UIViewController
         viewModel.timelineItemsObservable
             .map{$0.count > 0}
             .bindTo(emptyStateView.rx.isHidden)
+            .addDisposableTo(disposeBag)
+        
+        tableView.rx
+            .modelSelected(TimelineItem.self)
+            .subscribe(onNext: self.presenter.showEditTimeslot )
             .addDisposableTo(disposeBag)
         
         tableView.rx.willDisplayCell
@@ -209,20 +214,13 @@ class TimelineViewController : UIViewController
          
             let cell = tableView.dequeueReusableCell(withIdentifier: ShortTimelineCell.cellIdentifier, for: indexPath) as! ShortTimelineCell
             cell.timelineItem = item
+            cell.selectionStyle = .none
             return cell
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: TimelineCell.cellIdentifier, for: indexPath) as! TimelineCell
         cell.timelineItem = item
-        
-        cell.editClickObservable
-            .map{ [unowned self] item in
-                let position = cell.categoryCircle.convert(cell.categoryCircle.center, to: self.view)
-                return (position, item)
-            }
-            .subscribe(onNext: self.viewModel.notifyEditingBegan)
-            .addDisposableTo(cell.disposeBag)
-                
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -235,3 +233,4 @@ class TimelineViewController : UIViewController
         return cell.categoryCircle.convert(cell.categoryCircle.center, to: view)
     }
 }
+
