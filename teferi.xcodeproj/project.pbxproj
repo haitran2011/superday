@@ -203,6 +203,8 @@
 		AC086A061F8B99920003AAB4 /* EditTimeslotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC086A051F8B99920003AAB4 /* EditTimeslotViewModel.swift */; };
 		AC086A081F8B99A90003AAB4 /* EditTimeslotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC086A071F8B99A90003AAB4 /* EditTimeslotPresenter.swift */; };
 		AC086A0B1F8CDA8E0003AAB4 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC086A0A1F8CDA8E0003AAB4 /* ShadowView.swift */; };
+		AC086A121F8E508A0003AAB4 /* SimpleDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC086A101F8E508A0003AAB4 /* SimpleDetailCell.swift */; };
+		AC086A131F8E508A0003AAB4 /* SimpleDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC086A111F8E508A0003AAB4 /* SimpleDetailCell.xib */; };
 		AC0A632A1E548F0800D56433 /* TrigonometryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0A63291E548F0800D56433 /* TrigonometryHelper.swift */; };
 		AC0CA4BD1F3DB76300EAEB44 /* TimelineVoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0CA4BC1F3DB76300EAEB44 /* TimelineVoteView.swift */; };
 		AC0CA4BF1F3DB78400EAEB44 /* TimelineVoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0CA4BE1F3DB78400EAEB44 /* TimelineVoteView.xib */; };
@@ -214,6 +216,8 @@
 		AC3901F41E5665CF008063C7 /* CategoryButtonsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3901F31E5665CF008063C7 /* CategoryButtonsHandler.swift */; };
 		AC449C311E92BC8C00847957 /* PermissionViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC449C301E92BC8C00847957 /* PermissionViewModelProtocol.swift */; };
 		AC449C3B1E95690700847957 /* LocationPermissionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC449C3A1E95690700847957 /* LocationPermissionViewModelTests.swift */; };
+		AC4F8EE51F8E6FEF004E2DA0 /* CategorySelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F8EE31F8E6FEF004E2DA0 /* CategorySelectionCell.swift */; };
+		AC4F8EE61F8E6FEF004E2DA0 /* CategorySelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC4F8EE41F8E6FEF004E2DA0 /* CategorySelectionCell.xib */; };
 		AC69F0A21F4C3FD000EF2CC9 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F0A11F4C3FD000EF2CC9 /* RatingViewController.swift */; };
 		AC69F0A61F4C401A00EF2CC9 /* RatingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F0A51F4C401A00EF2CC9 /* RatingPresenter.swift */; };
 		AC69F0A81F4C407100EF2CC9 /* RatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F0A71F4C407100EF2CC9 /* RatingViewModel.swift */; };
@@ -496,6 +500,8 @@
 		AC086A051F8B99920003AAB4 /* EditTimeslotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeslotViewModel.swift; sourceTree = "<group>"; };
 		AC086A071F8B99A90003AAB4 /* EditTimeslotPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeslotPresenter.swift; sourceTree = "<group>"; };
 		AC086A0A1F8CDA8E0003AAB4 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		AC086A101F8E508A0003AAB4 /* SimpleDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDetailCell.swift; sourceTree = "<group>"; };
+		AC086A111F8E508A0003AAB4 /* SimpleDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleDetailCell.xib; sourceTree = "<group>"; };
 		AC0A63291E548F0800D56433 /* TrigonometryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrigonometryHelper.swift; sourceTree = "<group>"; };
 		AC0A632B1E548FE800D56433 /* CategoryWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryWheel.swift; sourceTree = "<group>"; };
 		AC0CA4BC1F3DB76300EAEB44 /* TimelineVoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineVoteView.swift; sourceTree = "<group>"; };
@@ -509,6 +515,8 @@
 		AC3901F31E5665CF008063C7 /* CategoryButtonsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryButtonsHandler.swift; sourceTree = "<group>"; };
 		AC449C301E92BC8C00847957 /* PermissionViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionViewModelProtocol.swift; sourceTree = "<group>"; };
 		AC449C3A1E95690700847957 /* LocationPermissionViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPermissionViewModelTests.swift; sourceTree = "<group>"; };
+		AC4F8EE31F8E6FEF004E2DA0 /* CategorySelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionCell.swift; sourceTree = "<group>"; };
+		AC4F8EE41F8E6FEF004E2DA0 /* CategorySelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySelectionCell.xib; sourceTree = "<group>"; };
 		AC69F0A11F4C3FD000EF2CC9 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingViewController.swift; path = Rating/RatingViewController.swift; sourceTree = "<group>"; };
 		AC69F0A51F4C401A00EF2CC9 /* RatingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingPresenter.swift; path = Rating/RatingPresenter.swift; sourceTree = "<group>"; };
 		AC69F0A71F4C407100EF2CC9 /* RatingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingViewModel.swift; path = Rating/RatingViewModel.swift; sourceTree = "<group>"; };
@@ -1304,6 +1312,10 @@
 			isa = PBXGroup;
 			children = (
 				AC086A0A1F8CDA8E0003AAB4 /* ShadowView.swift */,
+				AC086A101F8E508A0003AAB4 /* SimpleDetailCell.swift */,
+				AC086A111F8E508A0003AAB4 /* SimpleDetailCell.xib */,
+				AC4F8EE31F8E6FEF004E2DA0 /* CategorySelectionCell.swift */,
+				AC4F8EE41F8E6FEF004E2DA0 /* CategorySelectionCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1479,8 +1491,10 @@
 			files = (
 				24564F571D83254E00D9A8AE /* TimelineCell.xib in Resources */,
 				24564F771D837FBE00D9A8AE /* Localizable.strings in Resources */,
+				AC086A131F8E508A0003AAB4 /* SimpleDetailCell.xib in Resources */,
 				8C9EF43F1F823C18002AE07C /* ShortTimelineCell.xib in Resources */,
 				AC69F0AB1F4C40CD00EF2CC9 /* Rating.storyboard in Resources */,
+				AC4F8EE61F8E6FEF004E2DA0 /* CategorySelectionCell.xib in Resources */,
 				8C7E110A1E9B6E79009AAF49 /* Settings.bundle in Resources */,
 				240AC7221D748C8800F21F4F /* Assets.xcassets in Resources */,
 				24B03B671DA3866400452D16 /* AddTimeSlotView.xib in Resources */,
@@ -1732,6 +1746,7 @@
 				24EB96831DE709790040C211 /* DelayedSequence.swift in Sources */,
 				8C37F4C71F7E4514008B75E8 /* MotionPermissionViewModel.swift in Sources */,
 				24C72AAA1D90731C00DABAC3 /* LoggingService.swift in Sources */,
+				AC4F8EE51F8E6FEF004E2DA0 /* CategorySelectionCell.swift in Sources */,
 				24DE23FE1E1BB38C0089B49E /* TimeService.swift in Sources */,
 				BE24B8821E76C9D8005DF5B3 /* TrackEventPersistencyService.swift in Sources */,
 				AC69F0A81F4C407100EF2CC9 /* RatingViewModel.swift in Sources */,
@@ -1748,6 +1763,7 @@
 				AC3901F41E5665CF008063C7 /* CategoryButtonsHandler.swift in Sources */,
 				8C26A1711ECAE65A00EFE509 /* IntroPresenter.swift in Sources */,
 				AC7374941F71222100AF9C96 /* CMAccessForExistingUsersPresenter.swift in Sources */,
+				AC086A121F8E508A0003AAB4 /* SimpleDetailCell.swift in Sources */,
 				24224B081E28E37700AD7575 /* TimelineItem.swift in Sources */,
 				8C9C256B1ED348EE00B10187 /* NavigationViewModel.swift in Sources */,
 				24EB96761DE7080F0040C211 /* TimeSlotService.swift in Sources */,
