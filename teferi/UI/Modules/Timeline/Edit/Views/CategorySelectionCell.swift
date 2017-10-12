@@ -11,22 +11,23 @@ class CategorySelectionCell: UITableViewCell
     {
         self.timelineItem = timelineItem
         
-        guard let _ = editView
-        else
+        if editView == nil
         {
             editView = EditTimeSlotView(categoryProvider: categoryProvider)
             editView.backgroundColor = .clear
             contentView.addSubview(editView)
             editView.constrainEdges(to: contentView)
-            return
         }
-    }
-    
-    override func layoutSubviews()
-    {
-        super.layoutSubviews()
         
         editView.onEditBegan(point: CGPoint(x: 0, y: 34), timelineItem: timelineItem)
         editView.backgroundColor = .clear
     }
+    
+//    override func layoutSubviews()
+//    {
+//        super.layoutSubviews()
+//
+//        editView.onEditBegan(point: CGPoint(x: 0, y: 34), timelineItem: timelineItem)
+//        editView.backgroundColor = .clear
+//    }
 }
