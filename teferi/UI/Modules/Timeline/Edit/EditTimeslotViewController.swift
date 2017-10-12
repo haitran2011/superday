@@ -36,7 +36,7 @@ class EditTimeslotViewController: UIViewController
         didSet
         {
             guard let tableView = self.tableView else { return }
-            tableView.reloadSections([SectionType.singleSlot.rawValue, SectionType.time.rawValue], animationStyle: .fade)
+            tableView.reloadSections([SectionType.singleSlot.rawValue, SectionType.time.rawValue, SectionType.map.rawValue], animationStyle: .fade)
             tableView.reloadRows(at: [IndexPath(row: SectionType.CategorySelectionRowType.categoryDetail.rawValue, section: SectionType.categorySelection.rawValue)], with: .fade)
         }
     }
@@ -72,6 +72,8 @@ class EditTimeslotViewController: UIViewController
         tableView.register(UINib.init(nibName: "TimelineCell", bundle: Bundle.main), forCellReuseIdentifier: TimelineCell.cellIdentifier)
         tableView.register(UINib.init(nibName: "SimpleDetailCell", bundle: Bundle.main), forCellReuseIdentifier: SimpleDetailCell.cellIdentifier)
         tableView.register(UINib.init(nibName: "CategorySelectionCell", bundle: Bundle.main), forCellReuseIdentifier: CategorySelectionCell.cellIdentifier)
+        tableView.register(UINib.init(nibName: "MapCell", bundle: Bundle.main), forCellReuseIdentifier: MapCell.cellIdentifier)
+        
         
         let headerView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: tableView.bounds.width, height: 8)))
         headerView.backgroundColor = .clear
@@ -150,6 +152,8 @@ extension EditTimeslotViewController : UITableViewDataSource
         guard let sectionType = SectionType(rawValue: section) else { return 0 }
         
         switch sectionType {
+        case .multipleSlots:
+            return 0
         case .singleSlot:
             return 1
         case .categorySelection:
@@ -161,8 +165,8 @@ extension EditTimeslotViewController : UITableViewDataSource
             } else {
                 return 1
             }
-        default:
-            return 0
+        case .map:
+            return 1
         }
     }
     
@@ -220,6 +224,14 @@ extension EditTimeslotViewController : UITableViewDataSource
             }
             
             setup(cell)
+            return cell
+            
+        case .map:
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: MapCell.cellIdentifier, for: indexPath) as! MapCell
+            cell.configure(with: timelineItem.timeSlots)
+            setup(cell)
+            cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0)
             return cell
             
         default:

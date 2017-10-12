@@ -1,4 +1,5 @@
 import Foundation
+import MapKit
 
 extension Array
 {
@@ -98,5 +99,56 @@ extension Array where Element : Hashable
             dict.updateValue(element, forKey: key)
         }
         return dict
+    }
+}
+
+extension Array where Element == Annotation
+{
+    var centerCoordinate : CLLocationCoordinate2D
+    {
+        guard
+            let maxLatitude = maxLatitude,
+            let minLatitude = minLatitude,
+            let maxLongitude = maxLongitude,
+            let minLongitude = minLongitude
+            else { return CLLocationCoordinate2D(latitude: 40.6401, longitude: 22.9444) }
+        
+        return CLLocationCoordinate2D(latitude: (maxLatitude + minLatitude) / 2, longitude: (maxLongitude + minLongitude) / 2)
+    }
+    
+    var maxLatitude : Double?
+    {
+        let point = self.sorted(by: { (element1, element2) -> Bool in
+            return element1.coordinate.latitude > element2.coordinate.latitude
+        }).first
+        
+        return point?.coordinate.latitude
+    }
+    
+    var minLatitude : Double?
+    {
+        let point = self.sorted(by: { (element1, element2) -> Bool in
+            return element1.coordinate.latitude < element2.coordinate.latitude
+        }).first
+        
+        return point?.coordinate.latitude
+    }
+    
+    var maxLongitude : Double?
+    {
+        let point = self.sorted(by: { (element1, element2) -> Bool in
+            return element1.coordinate.longitude > element2.coordinate.longitude
+        }).first
+        
+        return point?.coordinate.longitude
+    }
+    
+    var minLongitude : Double?
+    {
+        let point = self.sorted(by: { (element1, element2) -> Bool in
+            return element1.coordinate.longitude < element2.coordinate.longitude
+        }).first
+        
+        return point?.coordinate.longitude
     }
 }
