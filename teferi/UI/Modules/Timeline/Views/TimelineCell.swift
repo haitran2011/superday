@@ -28,9 +28,12 @@ class TimelineCell : UITableViewCell
     {
         didSet
         {
-            tagLeadingSpaceConstraint.isActive = useType == .timeline
-            tagYAlignConstraint.isActive = useType == .timeline
-            setNeedsLayout()
+            if let tagLeadingSpaceConstraint = tagLeadingSpaceConstraint, let tagYAlignConstraint = tagYAlignConstraint
+            {
+                tagLeadingSpaceConstraint.isActive = useType == .timeline
+                tagYAlignConstraint.isActive = useType == .timeline
+                setNeedsLayout()
+            }
         }
     }
     
@@ -130,7 +133,7 @@ class TimelineCell : UITableViewCell
     private func layoutSlotTime(withItem timelineItem: TimelineItem)
     {
 
-        slotTime.text = useType == .editTimeslot ?
+        slotTime.text = (useType == .editTimeslot) ?
             timelineItem.slotStartAndStopTimeText :
             timelineItem.slotTimeText
 

@@ -1,4 +1,5 @@
 import Foundation
+import RxSwift
 
 class EditTimeslotPresenter
 {
@@ -10,10 +11,10 @@ class EditTimeslotPresenter
         self.viewModelLocator = viewModelLocator
     }
     
-    static func create(with viewModelLocator: ViewModelLocator, timelineItem: TimelineItem) -> EditTimeslotViewController
+    static func create(with viewModelLocator: ViewModelLocator, startDate: Date, timelineItemsObservable: Observable<[TimelineItem]>) -> EditTimeslotViewController
     {
         let presenter = EditTimeslotPresenter(viewModelLocator: viewModelLocator)
-        let viewModel = viewModelLocator.getEditTimeslotViewModel(for: timelineItem)
+        let viewModel = viewModelLocator.getEditTimeslotViewModel(for: startDate, timelineItemsObservable: timelineItemsObservable)
         
         let viewController = StoryboardScene.Main.instantiateEditTimeslot()
         viewController.inject(presenter: presenter, viewModel: viewModel)

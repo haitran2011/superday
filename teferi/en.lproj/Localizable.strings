@@ -44,6 +44,10 @@
 "CMExistingUsersAccessFinePrint" = "* Health App access won't be needed anymore";
 "CMExistingUsersAccessButtonTitle" = "Make Superday better";
 
+"EditTimeSlotStartTitle" = "Start";
+"EditTimeSlotEndTitle" = "End";
+"EditTimeSlotCategoryTitle" = "Category";
+
 //Categories
 "Commute" = "Movement";
 "Work" = "Work";

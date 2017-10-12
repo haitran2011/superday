@@ -1,4 +1,5 @@
 import UIKit
+import RxSwift
 
 class TimelinePresenter : NSObject
 {
@@ -23,9 +24,9 @@ class TimelinePresenter : NSObject
         return viewController
     }
     
-    func showEditTimeslot(with timelineItem: TimelineItem)
+    func showEditTimeslot(with startDate: Date, timelineItemsObservable: Observable<[TimelineItem]>)
     {        
-        let vc = EditTimeslotPresenter.create(with: viewModelLocator, timelineItem: timelineItem)
+        let vc = EditTimeslotPresenter.create(with: viewModelLocator, startDate: startDate, timelineItemsObservable: timelineItemsObservable)
         vc.modalPresentationStyle = .overCurrentContext
         vc.transitioningDelegate = self
         viewController.present(vc, animated: true, completion: nil)

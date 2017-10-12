@@ -121,7 +121,9 @@ class TimelineViewController : UIViewController
         
         tableView.rx
             .modelSelected(TimelineItem.self)
-            .subscribe(onNext: self.presenter.showEditTimeslot )
+            .subscribe(onNext: { (item) in
+                self.presenter.showEditTimeslot(with: item.startTime, timelineItemsObservable: self.viewModel.timelineItemsObservable)
+            })
             .addDisposableTo(disposeBag)
         
         tableView.rx.willDisplayCell
@@ -165,6 +167,10 @@ class TimelineViewController : UIViewController
         
         viewModel.dailyVotingNotificationObservable
             .subscribe(onNext: onNotificationOpen)
+            .addDisposableTo(disposeBag)
+        
+        viewModel.lastSlotUpdateObservable
+            .subscribe(onNext: reloadLastSlot)
             .addDisposableTo(disposeBag)
     }
     
@@ -231,6 +237,15 @@ class TimelineViewController : UIViewController
         }
         
         return cell.categoryCircle.convert(cell.categoryCircle.center, to: view)
+    }
+    
+    private func reloadLastSlot()
+    {
+        let numberOfRows = tableView.numberOfRows(inSection: 0)
+        
+        guard numberOfRows > 0 else { return }
+        
+        tableView.reloadRows(at: [IndexPath(row: numberOfRows - 1, section: 0)], with: .none)
     }
 }
 

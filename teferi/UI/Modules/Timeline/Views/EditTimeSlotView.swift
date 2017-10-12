@@ -99,7 +99,7 @@ class EditTimeSlotView : UIView, TrigonometryHelper, CategoryButtonDelegate
     
     func onEditBegan(point: CGPoint, timelineItem: TimelineItem)
     {
-        guard point.x != 0 && point.y != 0 else { return }
+        guard point.y != 0 else { return }
         layoutIfNeeded()
         
         self.timelineItem = timelineItem

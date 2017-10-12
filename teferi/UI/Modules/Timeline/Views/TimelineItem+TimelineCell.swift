@@ -20,6 +20,24 @@ extension TimelineItem
         return CGFloat(max(height, minHeight))
     }
     
+    var startTimeText: String
+    {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        
+        return formatter.string(from: startTime)
+    }
+    
+    var endTimeText: String?
+    {
+        guard let endTime = endTime else { return nil }
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        
+        return formatter.string(from: endTime)
+    }
+    
     var slotTimeText: String
     {
         let formatter = DateFormatter()
