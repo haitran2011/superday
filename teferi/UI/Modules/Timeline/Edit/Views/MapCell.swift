@@ -22,7 +22,7 @@ class MapCell: UITableViewCell
         self.dataSource = timeSlots.map(toAnnotation)
         centreMap()
         mapView.addAnnotations(dataSource)
-//        mapView.showsUserLocation = true
+        mapView.showsUserLocation = true
     }
     
     private func centreMap()
