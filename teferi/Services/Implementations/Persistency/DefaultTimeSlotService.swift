@@ -109,8 +109,6 @@ class DefaultTimeSlotService : TimeSlotService
     
     func update(timeSlot: TimeSlot, withCategory category: Category)
     {
-        guard category != timeSlot.category else { return }
-
         let predicate = Predicate(parameter: "startTime", equals: timeSlot.startTime as AnyObject)
         let editFunction = { (timeSlot: TimeSlot) -> (TimeSlot) in
             return timeSlot.withCategory(category, setByUser: true)

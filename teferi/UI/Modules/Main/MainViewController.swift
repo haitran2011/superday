@@ -90,7 +90,9 @@ class MainViewController : UIViewController, MFMailComposeViewControllerDelegate
         
         viewModel
             .beganEditingObservable
-            .subscribe(onNext: editView.onEditBegan)
+            .subscribe(onNext: { (point, timelineItem) in
+                self.editView.onEditBegan(point: point, timelineItem: timelineItem)
+            })
             .addDisposableTo(disposeBag)
         
         //Category creation

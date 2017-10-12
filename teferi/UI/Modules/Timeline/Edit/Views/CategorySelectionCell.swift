@@ -19,15 +19,7 @@ class CategorySelectionCell: UITableViewCell
             editView.constrainEdges(to: contentView)
         }
         
-        editView.onEditBegan(point: CGPoint(x: 0, y: 34), timelineItem: timelineItem)
+        editView.onEditBegan(point: CGPoint(x: 0, y: 34), timelineItem: timelineItem, hideCurrentCategory: false)
         editView.backgroundColor = .clear
     }
-    
-//    override func layoutSubviews()
-//    {
-//        super.layoutSubviews()
-//
-//        editView.onEditBegan(point: CGPoint(x: 0, y: 34), timelineItem: timelineItem)
-//        editView.backgroundColor = .clear
-//    }
 }

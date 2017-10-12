@@ -97,7 +97,7 @@ class EditTimeSlotView : UIView, TrigonometryHelper, CategoryButtonDelegate
         editEndedSubject.onNext((timelineItem, category))
     }
     
-    func onEditBegan(point: CGPoint, timelineItem: TimelineItem)
+    func onEditBegan(point: CGPoint, timelineItem: TimelineItem, hideCurrentCategory: Bool = true)
     {
         guard point.y != 0 else { return }
         layoutIfNeeded()
@@ -107,7 +107,9 @@ class EditTimeSlotView : UIView, TrigonometryHelper, CategoryButtonDelegate
         
         alpha = 1.0
         
-        let items = categoryProvider.getAll(but: .unknown, timelineItem.category)
+        let items = hideCurrentCategory ?
+            categoryProvider.getAll(but: .unknown, timelineItem.category) :
+            categoryProvider.getAll(but: .unknown)
         
         viewHandler?.cleanAll()
         viewHandler = CategoryButtonsHandler(items: items)
