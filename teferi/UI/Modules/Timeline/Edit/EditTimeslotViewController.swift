@@ -101,9 +101,16 @@ class EditTimeslotViewController: UIViewController
                 {
                     if !self.viewModel.isShowingSubSlot
                     {
-                        self.presentedViewController?.dismiss(animated: true, completion: {
+                        if let presentedViewController = self.presentedViewController
+                        {
+                            presentedViewController.dismiss(animated: true, completion: {
+                                self.presenter.dismiss()
+                            })
+                        }
+                        else
+                        {
                             self.presenter.dismiss()
-                        })
+                        }
                     }
                     return
 
