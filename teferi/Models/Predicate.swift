@@ -5,6 +5,12 @@ class Predicate
     let format : String
     let parameters : [ AnyObject ]
     
+    init(parameter: String, in objects: [AnyObject])
+    {
+        self.format = "ANY \(parameter) IN %@"
+        self.parameters = [ objects as AnyObject ]
+    }
+    
     init(parameter: String, equals object: AnyObject)
     {
         self.format = "\(parameter) == %@"
