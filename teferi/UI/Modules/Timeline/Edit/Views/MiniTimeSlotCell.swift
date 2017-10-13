@@ -21,7 +21,7 @@ class MiniTimeSlotCell: UITableViewCell
     
     private func setupLine(with timeSlot: TimeSlot)
     {
-        lineHeightConstraint.constant = timeSlot.duration != nil ? calculatedLineHeight(for: timeSlot.duration!) - 14 : 16
+        lineHeightConstraint.constant = timeSlot.duration != nil ? calculatedLineHeight(for: timeSlot.duration!) : 16
         lineView.color = timeSlot.category.color
         lineView.collapsed = false
         lineView.fading = false

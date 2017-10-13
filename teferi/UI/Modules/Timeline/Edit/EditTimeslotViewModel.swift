@@ -80,22 +80,30 @@ class EditTimeslotViewModel
             if self.isShowingSubSlot
             {
                 var timeSlotToShow : TimeSlot!
+                var isRunning = false
+                
                 for timeline in timelineItems
                 {
                     if let timeSlot = timeline.timeSlots.filter({ $0.startTime == date }).first
                     {
                         timeSlotToShow = timeSlot
+                        let index = timeline.timeSlots.index(where: { $0.startTime == date })
+                        if index == timeline.timeSlots.endIndex - 1
+                        {
+                            isRunning = timeline.isRunning
+                        }
                         break
                     }
                 }
-                print(timeSlotToShow, #function)
+
                 guard timeSlotToShow != nil else { return nil }
                 
                 return TimelineItem(withTimeSlots: [timeSlotToShow],
                                     category: timeSlotToShow.category,
                                     duration: timeSlotToShow.duration != nil ?
                                         timeSlotToShow.duration! :
-                                        self.timeService.now.timeIntervalSince(timeSlotToShow.startTime))
+                                        self.timeService.now.timeIntervalSince(timeSlotToShow.startTime),
+                                    isRunning: isRunning)
             }
             else
             {

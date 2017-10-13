@@ -96,7 +96,18 @@ class EditTimeslotViewController: UIViewController
     {
         viewModel.timelineItemObservable
             .subscribe(onNext: { (item) in
-                guard let item = item else { self.presenter.dismiss(); return }
+                guard let item = item
+                else
+                {
+                    if !self.viewModel.isShowingSubSlot
+                    {
+                        self.presentingViewController?.dismiss(animated: true, completion: {
+                            self.presenter.dismiss()
+                        })
+                    }
+                    return
+
+                }
                 self.timelineItem = item
             })
             .addDisposableTo(disposeBag)
@@ -177,13 +188,13 @@ extension EditTimeslotViewController : UITableViewDataSource
             {
                 return 0
             }
-            else if let _ = timelineItem.endTime
+            else if timelineItem.isRunning
             {
-                return 2
+                return 1
             }
             else
             {
-                return 1
+                return 2
             }
         case .map:
             return 1
