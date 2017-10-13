@@ -31,6 +31,8 @@ class EditTimeslotViewController: UIViewController
     @IBOutlet private weak var blurView : UIVisualEffectView!
     @IBOutlet private weak var shadowView : ShadowView!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     fileprivate var timelineItem : TimelineItem!
     {
         didSet
@@ -49,7 +51,7 @@ class EditTimeslotViewController: UIViewController
             tableView.reloadSections([SectionType.categorySelection.rawValue], animationStyle: .fade)
         }
     }
-    fileprivate var isMultiSlotItem : Bool { return timelineItem.timeSlots.count > 1 }
+    fileprivate var isMultiSlotItem : Bool {return timelineItem.timeSlots.count > 1 }
     
     // MARK: - Init
     func inject(presenter: EditTimeslotPresenter, viewModel: EditTimeslotViewModel)
@@ -64,6 +66,9 @@ class EditTimeslotViewController: UIViewController
         super.viewDidLoad()
         
         createBindings()
+        
+        containerView.backgroundColor = viewModel.isShowingSubSlot ? .white : .clear
+        topConstraint.constant = viewModel.isShowingSubSlot ? 58 : 50
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
@@ -123,11 +128,18 @@ extension EditTimeslotViewController : UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         guard let sectionType = SectionType(rawValue: indexPath.section) else { return }
-        
         switch sectionType {
-        case .categorySelection:
-            guard let categorySelectionRowType = SectionType.CategorySelectionRowType.init(rawValue: indexPath.row) else { return }
+        case .multipleSlots:
             
+            if indexPath.row > 0
+            {
+                presenter.showEditSubTimeSlot(with: timelineItem.timeSlots[indexPath.row - 1].startTime,
+                                              timelineItemsObservable: viewModel.timelineItemsObservable)
+            }
+            
+        case .categorySelection:
+            
+            guard let categorySelectionRowType = SectionType.CategorySelectionRowType.init(rawValue: indexPath.row) else { return }
             switch categorySelectionRowType {
             case .categoryDetail:
                 isShowingCategorySelection = !isShowingCategorySelection

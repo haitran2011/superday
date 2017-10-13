@@ -24,7 +24,7 @@ class TimelinePresenter : NSObject
         return viewController
     }
     
-    func showEditTimeslot(with startDate: Date, timelineItemsObservable: Observable<[TimelineItem]>)
+    func showEditTimeSlot(with startDate: Date, timelineItemsObservable: Observable<[TimelineItem]>)
     {        
         let vc = EditTimeslotPresenter.create(with: viewModelLocator, startDate: startDate, timelineItemsObservable: timelineItemsObservable)
         vc.modalPresentationStyle = .overCurrentContext

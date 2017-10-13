@@ -29,7 +29,7 @@ protocol ViewModelLocator
     
     func getRatingViewModel(start startDate: Date, end endDate: Date) -> RatingViewModel
     
-    func getEditTimeslotViewModel(for startDate: Date, timelineItemsObservable: Observable<[TimelineItem]>) -> EditTimeslotViewModel
+    func getEditTimeslotViewModel(for startDate: Date, timelineItemsObservable: Observable<[TimelineItem]>, isShowingSubSlot: Bool) -> EditTimeslotViewModel
 }
 
 class DefaultViewModelLocator : ViewModelLocator
@@ -220,9 +220,10 @@ class DefaultViewModelLocator : ViewModelLocator
                                timeService: timeService)
     }
     
-    func getEditTimeslotViewModel(for startDate: Date, timelineItemsObservable: Observable<[TimelineItem]>) -> EditTimeslotViewModel
+    func getEditTimeslotViewModel(for startDate: Date, timelineItemsObservable: Observable<[TimelineItem]>, isShowingSubSlot: Bool = false) -> EditTimeslotViewModel
     {
         return EditTimeslotViewModel(startDate: startDate,
+                                     isShowingSubSlot: isShowingSubSlot,
                                      timelineItemsObservable: timelineItemsObservable,
                                      timeSlotService: timeSlotService,
                                      metricsService: metricsService,

@@ -161,20 +161,22 @@
                         <constraints>
                             <constraint firstItem="ItQ-NB-6Ao" firstAttribute="top" secondItem="4PE-bo-qNf" secondAttribute="bottom" constant="50" id="5hR-U1-Qf1"/>
                             <constraint firstItem="wxZ-Xa-CYJ" firstAttribute="trailing" secondItem="Jpu-7P-ywT" secondAttribute="trailing" id="8PB-BP-r4G"/>
-                            <constraint firstAttribute="trailing" secondItem="f5a-8d-b7J" secondAttribute="trailing" id="EfR-t1-8JF"/>
+                            <constraint firstItem="wxZ-Xa-CYJ" firstAttribute="top" secondItem="FUo-Sx-CXU" secondAttribute="top" id="Lzd-mJ-Uaa"/>
                             <constraint firstAttribute="trailing" secondItem="ItQ-NB-6Ao" secondAttribute="trailing" id="Mz7-mm-4Vl"/>
                             <constraint firstItem="ItQ-NB-6Ao" firstAttribute="leading" secondItem="Jpu-7P-ywT" secondAttribute="leading" id="U54-bW-P4W"/>
+                            <constraint firstItem="f5a-8d-b7J" firstAttribute="width" secondItem="FUo-Sx-CXU" secondAttribute="width" id="bXz-Fe-Il1"/>
+                            <constraint firstItem="f5a-8d-b7J" firstAttribute="centerX" secondItem="FUo-Sx-CXU" secondAttribute="centerX" id="cgz-BF-PSM"/>
                             <constraint firstAttribute="bottom" secondItem="ItQ-NB-6Ao" secondAttribute="bottom" id="eZe-Ki-wJG"/>
-                            <constraint firstItem="f5a-8d-b7J" firstAttribute="leading" secondItem="Jpu-7P-ywT" secondAttribute="leading" id="f0b-xJ-RL1"/>
-                            <constraint firstItem="f5a-8d-b7J" firstAttribute="top" secondItem="4PE-bo-qNf" secondAttribute="bottom" constant="40" id="gyz-4H-Fid"/>
-                            <constraint firstItem="wxZ-Xa-CYJ" firstAttribute="top" secondItem="Jpu-7P-ywT" secondAttribute="topMargin" constant="50" id="uox-0e-o88"/>
+                            <constraint firstItem="FUo-Sx-CXU" firstAttribute="top" secondItem="f5a-8d-b7J" secondAttribute="bottom" constant="-10" id="yEH-eJ-5ou"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="blurView" destination="ItQ-NB-6Ao" id="992-AH-2bn"/>
+                        <outlet property="containerView" destination="m5Q-Cw-rI2" id="3nw-66-dFz"/>
                         <outlet property="shadowView" destination="f5a-8d-b7J" id="oGl-9Q-X1F"/>
                         <outlet property="tableView" destination="FUo-Sx-CXU" id="lSK-Ca-y0c"/>
+                        <outlet property="topConstraint" destination="5hR-U1-Qf1" id="ZDj-ap-ggw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXn-Dh-BcG" userLabel="First Responder" sceneMemberID="firstResponder"/>

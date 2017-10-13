@@ -122,7 +122,7 @@ class TimelineViewController : UIViewController
         tableView.rx
             .modelSelected(TimelineItem.self)
             .subscribe(onNext: { (item) in
-                self.presenter.showEditTimeslot(with: item.startTime, timelineItemsObservable: self.viewModel.timelineItemsObservable)
+                self.presenter.showEditTimeSlot(with: item.startTime, timelineItemsObservable: self.viewModel.timelineItemsObservable)
             })
             .addDisposableTo(disposeBag)
         

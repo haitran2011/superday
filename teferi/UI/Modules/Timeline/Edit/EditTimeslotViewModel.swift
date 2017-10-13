@@ -7,13 +7,15 @@ class EditTimeslotViewModel
     {
         return timelineItemVariable.asObservable()
     }
+    let timelineItemsObservable: Observable<[TimelineItem]>
 
     let categoryProvider : CategoryProvider
+    let timeService: TimeService
+    var isShowingSubSlot : Bool
     
     private let timeSlotService: TimeSlotService
     private let metricsService: MetricsService
     private let smartGuessService: SmartGuessService
-    let timeService: TimeService
     private let startDate: Date
     
     private let timelineItemVariable = Variable<TimelineItem?>(nil)
@@ -21,6 +23,7 @@ class EditTimeslotViewModel
     
     // MARK: - Init
     init(startDate: Date,
+         isShowingSubSlot: Bool = false,
          timelineItemsObservable: Observable<[TimelineItem]>,
          timeSlotService: TimeSlotService,
          metricsService: MetricsService,
@@ -28,6 +31,8 @@ class EditTimeslotViewModel
          timeService: TimeService)
     {
         self.startDate = startDate
+        self.timelineItemsObservable = timelineItemsObservable
+        self.isShowingSubSlot = isShowingSubSlot
         self.timeSlotService = timeSlotService
         self.metricsService = metricsService
         self.smartGuessService = smartGuessService
@@ -72,7 +77,30 @@ class EditTimeslotViewModel
     private func filterSelectedElement(for date: Date) -> ([TimelineItem]) -> TimelineItem?
     {
         return { timelineItems in
-            timelineItems.filter({ $0.startTime == date }).first
+            if self.isShowingSubSlot
+            {
+                var timeSlotToShow : TimeSlot!
+                for timeline in timelineItems
+                {
+                    if let timeSlot = timeline.timeSlots.filter({ $0.startTime == date }).first
+                    {
+                        timeSlotToShow = timeSlot
+                        break
+                    }
+                }
+                print(timeSlotToShow, #function)
+                guard timeSlotToShow != nil else { return nil }
+                
+                return TimelineItem(withTimeSlots: [timeSlotToShow],
+                                    category: timeSlotToShow.category,
+                                    duration: timeSlotToShow.duration != nil ?
+                                        timeSlotToShow.duration! :
+                                        self.timeService.now.timeIntervalSince(timeSlotToShow.startTime))
+            }
+            else
+            {
+                return timelineItems.filter({ $0.startTime == date }).first
+            }
         }
     }
 }
