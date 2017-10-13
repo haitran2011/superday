@@ -48,30 +48,29 @@ class EditTimeslotViewModel
     // MARK: - Public methods
     func updateTimelineItem(_ timelineItem: TimelineItem, withCategory category: Category)
     {
-        for timeSlot in timelineItem.timeSlots
-        {
-            updateTimeSlot(timeSlot, withCategory: category)
-        }
+        updateTimeSlot(timelineItem.timeSlots, withCategory: category)
     }
     
     // MARK: - Private methods
-    private func updateTimeSlot(_ timeSlot: TimeSlot, withCategory category: Category)
+    private func updateTimeSlot(_ timeSlots: [TimeSlot], withCategory category: Category)
     {
-        let categoryWasOriginallySetByUser = timeSlot.categoryWasSetByUser
+//        let categoryWasOriginallySetByUser = timeSlot.categoryWasSetByUser
         
-        timeSlotService.update(timeSlot: timeSlot, withCategory: category)
-        metricsService.log(event: .timeSlotEditing(date: timeService.now, fromCategory: timeSlot.category, toCategory: category, duration: timeSlot.duration))
+        timeSlotService.update(timeSlots: timeSlots, withCategory: category)
+        timeSlots.forEach { (timeSlot) in
+            metricsService.log(event: .timeSlotEditing(date: timeService.now, fromCategory: timeSlot.category, toCategory: category, duration: timeSlot.duration))
+        }
         
-        let smartGuessId = timeSlot.smartGuessId
-        if !categoryWasOriginallySetByUser && smartGuessId != nil
-        {
-            //Strike the smart guess if it was wrong
-            smartGuessService.strike(withId: smartGuessId!)
-        }
-        else if smartGuessId == nil, let location = timeSlot.location
-        {
-            smartGuessService.add(withCategory: category, location: location)
-        }
+//        let smartGuessId = timeSlot.smartGuessId
+//        if !categoryWasOriginallySetByUser && smartGuessId != nil
+//        {
+//            //Strike the smart guess if it was wrong
+//            smartGuessService.strike(withId: smartGuessId!)
+//        }
+//        else if smartGuessId == nil, let location = timeSlot.location
+//        {
+//            smartGuessService.add(withCategory: category, location: location)
+//        }
     }
     
     private func filterSelectedElement(for date: Date) -> ([TimelineItem]) -> TimelineItem?
