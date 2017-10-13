@@ -200,35 +200,6 @@ class MainViewModel : RxViewModel
         metricsService.log(event: .timeSlotManualCreation(date: timeService.now, category: category))
         metricsService.log(event: .timeSlotCreated(date: timeService.now, category: category, duration: nil))
     }
-        
-    func updateTimelineItem(_ timelineItem: TimelineItem, withCategory category: Category)
-    {
-        for timeSlot in timelineItem.timeSlots
-        {
-            updateTimeSlot(timeSlot, withCategory: category)
-        }
-        
-        editStateService.notifyEditingEnded()
-    }
-    
-    private func updateTimeSlot(_ timeSlot: TimeSlot, withCategory category: Category)
-    {
-        let categoryWasOriginallySetByUser = timeSlot.categoryWasSetByUser
-
-        timeSlotService.update(timeSlot: timeSlot, withCategory: category)
-        metricsService.log(event: .timeSlotEditing(date: timeService.now, fromCategory: timeSlot.category, toCategory: category, duration: timeSlot.duration))
-        
-        let smartGuessId = timeSlot.smartGuessId
-        if !categoryWasOriginallySetByUser && smartGuessId != nil
-        {
-            //Strike the smart guess if it was wrong
-            smartGuessService.strike(withId: smartGuessId!)
-        }
-        else if smartGuessId == nil, let location = timeSlot.location
-        {
-            smartGuessService.add(withCategory: category, location: location)
-        }
-    }
     
     //MARK: Private Methods
     
