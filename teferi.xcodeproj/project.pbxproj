@@ -231,8 +231,13 @@
 		AC7374941F71222100AF9C96 /* CMAccessForExistingUsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7374931F71222100AF9C96 /* CMAccessForExistingUsersPresenter.swift */; };
 		AC8BE49F1F2A011900351C2F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE49E1F2A011900351C2F /* WelcomeView.swift */; };
 		AC9718451F4734570027E761 /* TimelineProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9718441F4734570027E761 /* TimelineProcessorTests.swift */; };
+		ACC11D601F90DDB50025809C /* TimeLineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC11D5F1F90DDB50025809C /* TimeLineHelper.swift */; };
 		ACCAFD251E8BDF490097F037 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCAFD241E8BDF490097F037 /* NotificationType.swift */; };
 		ACCF034B1F8FD8F000F3DCFF /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF034A1F8FD8F000F3DCFF /* Annotation.swift */; };
+		ACCF034E1F90A12C00F3DCFF /* MultiSlotHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF034C1F90A12C00F3DCFF /* MultiSlotHeaderCell.swift */; };
+		ACCF034F1F90A12C00F3DCFF /* MultiSlotHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCF034D1F90A12C00F3DCFF /* MultiSlotHeaderCell.xib */; };
+		ACCF03521F90A89400F3DCFF /* MiniTimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF03501F90A89400F3DCFF /* MiniTimeSlotCell.swift */; };
+		ACCF03531F90A89400F3DCFF /* MiniTimeSlotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCF03511F90A89400F3DCFF /* MiniTimeSlotCell.xib */; };
 		ACFF02691E82A21700498981 /* MockTrackEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF02681E82A21700498981 /* MockTrackEventService.swift */; };
 		BE03D9241E797A1D00F79377 /* EventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE03D9231E797A1D00F79377 /* EventSource.swift */; };
 		BE0A5B751EE0297600200939 /* TimeSlotServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A5B741EE0297600200939 /* TimeSlotServiceExtensions.swift */; };
@@ -533,8 +538,13 @@
 		AC7374931F71222100AF9C96 /* CMAccessForExistingUsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMAccessForExistingUsersPresenter.swift; sourceTree = "<group>"; };
 		AC8BE49E1F2A011900351C2F /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		AC9718441F4734570027E761 /* TimelineProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineProcessorTests.swift; sourceTree = "<group>"; };
+		ACC11D5F1F90DDB50025809C /* TimeLineHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineHelper.swift; sourceTree = "<group>"; };
 		ACCAFD241E8BDF490097F037 /* NotificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		ACCF034A1F8FD8F000F3DCFF /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		ACCF034C1F90A12C00F3DCFF /* MultiSlotHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSlotHeaderCell.swift; sourceTree = "<group>"; };
+		ACCF034D1F90A12C00F3DCFF /* MultiSlotHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiSlotHeaderCell.xib; sourceTree = "<group>"; };
+		ACCF03501F90A89400F3DCFF /* MiniTimeSlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTimeSlotCell.swift; sourceTree = "<group>"; };
+		ACCF03511F90A89400F3DCFF /* MiniTimeSlotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiniTimeSlotCell.xib; sourceTree = "<group>"; };
 		ACFF02681E82A21700498981 /* MockTrackEventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTrackEventService.swift; sourceTree = "<group>"; };
 		B0E298043A2BB331608A8FD2 /* Pods_teferi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teferi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE03D9231E797A1D00F79377 /* EventSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSource.swift; sourceTree = "<group>"; };
@@ -1168,6 +1178,7 @@
 		8CA4613C1EC9A31B00587399 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				ACC11D5F1F90DDB50025809C /* TimeLineHelper.swift */,
 				AC086A021F8B94D70003AAB4 /* Edit */,
 				8CEEF5AA1F175DB4007C36DA /* Datasource */,
 				8CA461411EC9A3CE00587399 /* Views */,
@@ -1325,6 +1336,10 @@
 				AC4F8EE41F8E6FEF004E2DA0 /* CategorySelectionCell.xib */,
 				AC4F8EE71F8FB55F004E2DA0 /* MapCell.swift */,
 				AC4F8EE81F8FB55F004E2DA0 /* MapCell.xib */,
+				ACCF034C1F90A12C00F3DCFF /* MultiSlotHeaderCell.swift */,
+				ACCF034D1F90A12C00F3DCFF /* MultiSlotHeaderCell.xib */,
+				ACCF03501F90A89400F3DCFF /* MiniTimeSlotCell.swift */,
+				ACCF03511F90A89400F3DCFF /* MiniTimeSlotCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1521,7 +1536,9 @@
 				2420A8681DB56B6800C0478C /* EmptyStateView.xib in Resources */,
 				513535D31DA26E3B00A365A9 /* Onboarding.storyboard in Resources */,
 				8CF8C0991EDED99300EA2C77 /* WeeklySummary.storyboard in Resources */,
+				ACCF03531F90A89400F3DCFF /* MiniTimeSlotCell.xib in Resources */,
 				24DE23ED1E1BB3180089B49E /* CalendarCell.xib in Resources */,
+				ACCF034F1F90A12C00F3DCFF /* MultiSlotHeaderCell.xib in Resources */,
 				AC0CA4BF1F3DB78400EAEB44 /* TimelineVoteView.xib in Resources */,
 				8C1729081EF02DB5002ABDDA /* DailySummary.storyboard in Resources */,
 			);
@@ -1774,6 +1791,7 @@
 				AC086A0B1F8CDA8E0003AAB4 /* ShadowView.swift in Sources */,
 				BEA783611E6DB4A400D44603 /* CategoryProvider.swift in Sources */,
 				8CF8C09D1EDEFEE900EA2C77 /* ChartView.swift in Sources */,
+				ACC11D601F90DDB50025809C /* TimeLineHelper.swift in Sources */,
 				24DE24011E1BB3A40089B49E /* DefaultSelectedDateService.swift in Sources */,
 				8C26A17A1ECAED7300EFE509 /* FadeTransition.swift in Sources */,
 				24564F601D8325CC00D9A8AE /* TimeSlot.swift in Sources */,
@@ -1813,7 +1831,9 @@
 				AC69F0A61F4C401A00EF2CC9 /* RatingPresenter.swift in Sources */,
 				8C6417051EAE0CDA00B893D7 /* FromBottomTransition.swift in Sources */,
 				2FB611401DE777B7007C5646 /* FeedbackService.swift in Sources */,
+				ACCF03521F90A89400F3DCFF /* MiniTimeSlotCell.swift in Sources */,
 				BE7FAFC41E72F90600A62AC9 /* TrackEventService.swift in Sources */,
+				ACCF034E1F90A12C00F3DCFF /* MultiSlotHeaderCell.swift in Sources */,
 				2482CAFB1DB12F9F00E892C1 /* OnboardingPage1.swift in Sources */,
 				247F05F81D87322600451BAD /* LocationService.swift in Sources */,
 				BE1BDFAF1E79BEB80077D694 /* CLLocationManagerExtensions.swift in Sources */,
