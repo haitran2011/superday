@@ -11,10 +11,10 @@ class MiniTimeSlotCell: UITableViewCell
     @IBOutlet private weak var activityTagView: ActivityTagView!
     @IBOutlet private weak var lineHeightConstraint: NSLayoutConstraint!
     
-    func configure(with timeSlot: TimeSlot)
+    func configure(with timeSlot: TimeSlot, alternativeEndTime: Date)
     {
         setupLine(with: timeSlot)
-        setupElapsedTimeLabel(with: timeSlot)
+        setupElapsedTimeLabel(with: timeSlot, alternativeEndTime: alternativeEndTime)
         setupCategoryIcon(with: timeSlot)
         setupActivityTag(with: timeSlot)
     }
@@ -28,10 +28,10 @@ class MiniTimeSlotCell: UITableViewCell
         lineView.layoutIfNeeded()
     }
     
-    private func setupElapsedTimeLabel(with timeSlot: TimeSlot)
+    private func setupElapsedTimeLabel(with timeSlot: TimeSlot, alternativeEndTime: Date)
     {
         elapsedTime.textColor = timeSlot.category.color
-        elapsedTime.text = timeSlot.duration != nil ? formatedElapsedTimeText(for: timeSlot.duration!) : ""
+        elapsedTime.text = timeSlot.duration != nil ? formatedElapsedTimeText(for: timeSlot.duration!) : formatedElapsedTimeText(for: alternativeEndTime.timeIntervalSince(timeSlot.startTime))
     }
     
     private func setupCategoryIcon(with timeSlot: TimeSlot)

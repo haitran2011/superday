@@ -13,7 +13,7 @@ class EditTimeslotViewModel
     private let timeSlotService: TimeSlotService
     private let metricsService: MetricsService
     private let smartGuessService: SmartGuessService
-    private let timeService: TimeService
+    let timeService: TimeService
     private let startDate: Date
     
     private let timelineItemVariable = Variable<TimelineItem?>(nil)

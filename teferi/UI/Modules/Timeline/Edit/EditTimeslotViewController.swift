@@ -196,7 +196,7 @@ extension EditTimeslotViewController : UITableViewDataSource
             else
             {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MiniTimeSlotCell.cellIdentifier, for: indexPath) as! MiniTimeSlotCell
-                cell.configure(with: timelineItem.timeSlots[indexPath.row - 1])
+                cell.configure(with: timelineItem.timeSlots[indexPath.row - 1], alternativeEndTime: viewModel.timeService.now)
                 setup(cell)
                 if indexPath.row != timelineItem.timeSlots.count
                 {
