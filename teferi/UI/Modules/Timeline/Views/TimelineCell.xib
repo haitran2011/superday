@@ -48,13 +48,6 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XR-CB-WIl">
-                        <rect key="frame" x="7" y="-1" width="48" height="48"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="48" id="7jS-zv-aAE"/>
-                            <constraint firstAttribute="height" constant="48" id="ANh-Mo-hR7"/>
-                        </constraints>
-                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQM-XP-kp0">
                         <rect key="frame" x="54" y="8" width="321" height="61"/>
                         <subviews>
@@ -133,12 +126,12 @@
                     <constraint firstItem="MQM-XP-kp0" firstAttribute="top" secondItem="dDI-IU-1Pi" secondAttribute="top" constant="8" id="5Ni-jN-hHj"/>
                     <constraint firstItem="d2A-yK-iZw" firstAttribute="centerY" secondItem="I6B-z7-bFn" secondAttribute="centerY" id="8eL-k7-B1l"/>
                     <constraint firstItem="d2A-yK-iZw" firstAttribute="top" secondItem="lWX-Wq-cy4" secondAttribute="bottom" priority="250" constant="3" id="EcF-eH-pei"/>
-                    <constraint firstItem="3XR-CB-WIl" firstAttribute="centerX" secondItem="LmH-eW-Lnz" secondAttribute="centerX" id="N9P-IK-U8r"/>
+                    <constraint firstItem="LmH-eW-Lnz" firstAttribute="top" secondItem="dDI-IU-1Pi" secondAttribute="top" constant="8" id="I5L-UX-Jjw"/>
                     <constraint firstItem="d2A-yK-iZw" firstAttribute="leading" secondItem="I6B-z7-bFn" secondAttribute="trailing" constant="6" id="Tgm-bL-Bry"/>
                     <constraint firstItem="MQM-XP-kp0" firstAttribute="leading" secondItem="LmH-eW-Lnz" secondAttribute="trailing" constant="8" id="XUt-6K-9eL"/>
                     <constraint firstItem="LmH-eW-Lnz" firstAttribute="leading" secondItem="dDI-IU-1Pi" secondAttribute="leading" constant="16" id="chr-jJ-LLJ"/>
-                    <constraint firstItem="3XR-CB-WIl" firstAttribute="centerY" secondItem="LmH-eW-Lnz" secondAttribute="centerY" id="fLJ-zu-HSs"/>
                     <constraint firstItem="d2A-yK-iZw" firstAttribute="leading" secondItem="lWX-Wq-cy4" secondAttribute="leading" priority="250" id="gKh-yC-Yji"/>
+                    <constraint firstItem="LmH-eW-Lnz" firstAttribute="leading" secondItem="dDI-IU-1Pi" secondAttribute="leading" constant="16" id="qEZ-eI-0Hu"/>
                     <constraint firstAttribute="trailing" secondItem="MQM-XP-kp0" secondAttribute="trailing" priority="750" id="ste-ph-APx"/>
                     <constraint firstItem="LmH-eW-Lnz" firstAttribute="top" secondItem="MQM-XP-kp0" secondAttribute="top" id="vB5-UD-Syx"/>
                 </constraints>
@@ -147,7 +140,6 @@
             <connections>
                 <outlet property="activityTagView" destination="d2A-yK-iZw" id="r0r-4q-DMq"/>
                 <outlet property="bottomMargin" destination="300-X0-xqj" id="7Ui-Ip-bpT"/>
-                <outlet property="categoryButton" destination="3XR-CB-WIl" id="XbJ-hl-Xq8"/>
                 <outlet property="categoryCircle" destination="LmH-eW-Lnz" id="bU3-ir-pO5"/>
                 <outlet property="categoryIcon" destination="hvt-Yn-Mch" id="9hh-cR-WEO"/>
                 <outlet property="contentHolder" destination="MQM-XP-kp0" id="ntG-lI-XhE"/>

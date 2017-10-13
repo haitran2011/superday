@@ -39,14 +39,6 @@ class TimelineCell : UITableViewCell
     
     private(set) var disposeBag = DisposeBag()
     
-    var editClickObservable : Observable<TimelineItem>
-    {
-        return self.categoryButton.rx.tap
-            .mapTo(self.timelineItem)
-            .filterNil()
-            .asObservable()
-    }
-    
     @IBOutlet private(set) weak var categoryCircle: UIView!
     
     // MARK: Private Properties
@@ -56,7 +48,6 @@ class TimelineCell : UITableViewCell
     @IBOutlet private weak var lineView : LineView!
     @IBOutlet private weak var slotTime : UILabel!
     @IBOutlet private weak var elapsedTime : UILabel!
-    @IBOutlet private weak var categoryButton : UIButton!
     @IBOutlet private weak var slotDescription : UILabel!
     @IBOutlet private weak var timeSlotDistanceConstraint : NSLayoutConstraint!
     @IBOutlet private weak var categoryIcon: UIImageView!
