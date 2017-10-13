@@ -88,7 +88,6 @@ class TimelineCell : UITableViewCell
         layoutDescriptionLabel(withItem: timelineItem)
         layoutCategoryIcon(forCategory: timelineItem.category)
         setupActivityTag(withTagText: timelineItem.activityTagText)
-
     }
     
     func animateIntro()
@@ -162,7 +161,7 @@ class TimelineCell : UITableViewCell
         
         bottomMargin.constant = useType == .timeline ?
             (item.isRunning ? 20 : 0) :
-            20
+            (timelineItem?.activityTagText != nil ? 30 : 20)
                 
         lineView.layoutIfNeeded()
     }
