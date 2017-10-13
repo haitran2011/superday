@@ -107,9 +107,9 @@ class DefaultTimeSlotService : TimeSlotService
         return timeSlots
     }
     
-    func update(timeSlot: TimeSlot, withCategory category: Category)
+    func update(timeSlots: [TimeSlot], withCategory category: Category)
     {
-        let predicate = Predicate(parameter: "startTime", equals: timeSlot.startTime as AnyObject)
+        let predicate = Predicate(parameter: "startTime", in: timeSlots.map({ $0.startTime }) as [AnyObject])
         let editFunction = { (timeSlot: TimeSlot) -> (TimeSlot) in
             return timeSlot.withCategory(category, setByUser: true)
         }
@@ -120,7 +120,9 @@ class DefaultTimeSlotService : TimeSlotService
         }
         else
         {
-            loggingService.log(withLogLevel: .warning, message: "Error updating category of TimeSlot created on \(timeSlot.startTime) from \(timeSlot.category) to \(category)")
+            timeSlots.forEach({ (timeSlot) in
+                loggingService.log(withLogLevel: .warning, message: "Error updating category of TimeSlot created on \(timeSlot.startTime) from \(timeSlot.category) to \(category)")
+            })
         }
     }
     

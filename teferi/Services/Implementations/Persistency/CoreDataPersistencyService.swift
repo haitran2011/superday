@@ -130,14 +130,16 @@ class CoreDataPersistencyService<T> : BasePersistencyService<T>
             
             do
             {
-                if let managedElement = try self.managedObjectContext.fetch(request).first as AnyObject?
+                if let managedElements = try self.managedObjectContext.fetch(request) as [AnyObject]?
                 {
-                    let managedObject = managedElement as! NSManagedObject
-                    
-                    let entity = self.modelAdapter.getModel(fromManagedObject: managedObject)
-                    newEntity = updateFunction(entity)
-                    
-                    self.setManagedElementProperties(newEntity!, managedObject)
+                    managedElements.forEach({ managedElement in
+                        let managedObject = managedElement as! NSManagedObject
+                        
+                        let entity = self.modelAdapter.getModel(fromManagedObject: managedObject)
+                        newEntity = updateFunction(entity)
+                        
+                        self.setManagedElementProperties(newEntity!, managedObject)
+                    })
                     
                     try self.managedObjectContext.save()
                 }
